@@ -1,0 +1,737 @@
+/* ============================================ */
+/* 📱 CORE TEAM - MOBILE RESPONSIVE STYLES */
+/* ============================================ */
+/* Developed for: teamsalahdevdz.netlify.app */
+/* ============================================ */
+
+/* ============================================ */
+/* BREAKPOINT: 1200px (Tablets & Small Desktops) */
+/* ============================================ */
+@media (max-width: 1200px) {
+  .app-container {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 2.3rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================ */
+/* BREAKPOINT: 992px (Tablets) */
+/* ============================================ */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-stats {
+    gap: 2rem;
+  }
+  
+  .hero-stat-value {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Floating Progress - Hide on tablets */
+  .floating-progress {
+    display: none;
+  }
+  
+  /* Timeline adjustments */
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    flex-direction: column !important;
+  }
+  
+  .timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+  
+  .timeline-dot {
+    left: 30px;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+  }
+}
+
+/* ============================================ */
+/* BREAKPOINT: 768px (Mobile Landscape & Tablets) */
+/* ============================================ */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  /* Theme Toggle - Adjust position */
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    min-height: auto;
+    padding: 80px 0 60px;
+  }
+  
+  .hero-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    gap: 0.4rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .scroll-indicator {
+    display: none;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  /* Benefits Grid */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .benefit-card {
+    padding: 1.5rem;
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-title {
+    font-size: 1.3rem;
+  }
+  
+  /* Skills Grid */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skill-item {
+    padding: 1rem;
+  }
+  
+  /* Testimonials Grid */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  /* Countdown Timer */
+  .countdown-container {
+    padding: 1.5rem;
+    margin: 2rem auto;
+  }
+  
+  .countdown-timer {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  
+  .countdown-value {
+    font-size: 2rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.7rem;
+  }
+  
+  /* Timeline */
+  .timeline {
+    margin: 2rem auto;
+  }
+  
+  .timeline-content {
+    padding: 1.2rem;
+  }
+  
+  .timeline-date {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.8rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+  
+  /* FAQ */
+  .faq-container {
+    margin: 2rem auto;
+  }
+  
+  .faq-question {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .faq-item.active .faq-answer {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+  }
+  
+  /* Application Form */
+  .application-card-enhanced {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+  
+  .form-container {
+    padding: 0;
+  }
+  
+  /* Progress Steps */
+  .progress-steps-enhanced {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .step-enhanced {
+    min-width: 70px;
+  }
+  
+  .step-icon-enhanced {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .step-number {
+    width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
+    top: -3px;
+    right: -3px;
+  }
+  
+  .step-title {
+    font-size: 0.75rem;
+  }
+  
+  .step-subtitle {
+    font-size: 0.6rem;
+  }
+  
+  /* Form Grid */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .section-header-enhanced {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .section-icon-enhanced {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .section-title-wrapper h3 {
+    font-size: 1.1rem;
+  }
+  
+  .section-title-wrapper p {
+    font-size: 0.75rem;
+  }
+  
+  .section-score {
+    margin-left: auto;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Interests Grid */
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  
+  .interest-card {
+    padding: 0.8rem;
+  }
+  
+  .interest-icon {
+    font-size: 1.3rem;
+  }
+  
+  .interest-title {
+    font-size: 0.75rem;
+  }
+  
+  .interest-subtitle {
+    font-size: 0.6rem;
+  }
+  
+  /* Hours Selector */
+  .hours-selector {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .hour-option {
+    flex: 1 1 calc(50% - 0.4rem);
+    min-width: 120px;
+    padding: 0.8rem;
+  }
+  
+  .hour-value {
+    font-size: 1.2rem;
+  }
+  
+  /* Evaluation Selector */
+  .evaluation-selector {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .eval-option {
+    padding: 1rem;
+  }
+  
+  .eval-option i {
+    font-size: 1.5rem;
+  }
+  
+  /* Textarea & Inputs */
+  .input-wrapper-enhanced input,
+  .textarea-wrapper-enhanced textarea {
+    padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .input-icon-enhanced {
+    left: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .char-counter {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+  }
+  
+  /* Idea Box */
+  .idea-box {
+    padding: 1rem;
+  }
+  
+  .idea-prompt {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .idea-tips {
+    gap: 0.5rem;
+  }
+  
+  .tip-badge,
+  .tip-item {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  /* Form Navigation */
+  .form-navigation {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .nav-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .nav-indicator {
+    order: -1;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .submit-btn-enhanced {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Quick Summary */
+  .quick-summary {
+    position: relative;
+    top: 0;
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .summary-header {
+    font-size: 0.9rem;
+  }
+  
+  .summary-value {
+    font-size: 0.8rem;
+  }
+  
+  /* Save Indicator */
+  .save-indicator {
+    top: 10px;
+    right: 10px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+  }
+  
+  /* Back to Top Button */
+  .back-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  /* Toast Notifications */
+  .toast-container {
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+  }
+  
+  .toast {
+    min-width: auto;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================ */
+/* BREAKPOINT: 480px (Small Mobile Phones) */
+/* ============================================ */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  .app-container {
+    padding: 1rem 0.8rem;
+  }
+  
+  .hero-badge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.6rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-description {
+    font-size: 0.85rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  /* Application Card */
+  .application-card-enhanced {
+    padding: 1rem;
+  }
+  
+  /* Interests Grid */
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Hours Selector */
+  .hour-option {
+    flex: 1 1 100%;
+  }
+  
+  /* Progress Steps */
+  .step-enhanced {
+    min-width: 60px;
+  }
+  
+  .step-icon-enhanced {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .step-title {
+    font-size: 0.65rem;
+  }
+  
+  .step-subtitle {
+    display: none;
+  }
+  
+  /* Countdown */
+  .countdown-timer {
+    gap: 0.5rem;
+  }
+  
+  .countdown-item {
+    min-width: 60px;
+  }
+  
+  .countdown-value {
+    font-size: 1.5rem;
+  }
+  
+  /* FAQ */
+  .faq-question {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Form Labels */
+  .form-label-enhanced {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  
+  .required-badge,
+  .optional-badge {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
+
+/* ============================================ */
+/* BREAKPOINT: 320px (Very Small Devices) */
+/* ============================================ */
+@media (max-width: 320px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .application-card-enhanced {
+    padding: 0.8rem;
+  }
+  
+  .step-title {
+    display: none;
+  }
+  
+  .countdown-value {
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================ */
+/* LANDSCAPE MODE FIXES */
+/* ============================================ */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 60px 0 40px;
+  }
+  
+  .scroll-indicator {
+    display: none;
+  }
+  
+  .floating-progress {
+    display: none;
+  }
+  
+  .back-to-top {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* ============================================ */
+/* TOUCH DEVICE OPTIMIZATIONS */
+/* ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase tap targets */
+  .nav-btn,
+  .submit-btn-enhanced,
+  .option-item,
+  .interest-card,
+  .hour-option,
+  .eval-option,
+  .faq-question {
+    cursor: default;
+    -webkit-tap-highlight-color: rgba(99, 102, 241, 0.2);
+  }
+  
+  /* Remove hover effects that cause issues on touch */
+  .benefit-card:hover,
+  .skill-item:hover,
+  .testimonial-card:hover,
+  .interest-card:hover {
+    transform: none;
+  }
+  
+  /* Larger touch targets */
+  input, 
+  textarea, 
+  select,
+  button {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* ============================================ */
+/* DARK MODE SPECIFIC MOBILE FIXES */
+/* ============================================ */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .application-card-enhanced {
+    background: rgba(15, 23, 42, 0.8);
+  }
+  
+  .glass-bg,
+  .glass-bg-strong {
+    background: rgba(30, 41, 59, 0.6);
+  }
+}
+
+/* ============================================ */
+/* PRINT STYLES */
+/* ============================================ */
+@media print {
+  .theme-toggle,
+  .floating-progress,
+  .back-to-top,
+  .scroll-indicator,
+  .toast-container,
+  .particles-js,
+  .gradient-overlay,
+  .form-navigation,
+  .save-indicator {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .application-card-enhanced,
+  .benefit-card,
+  .testimonial-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
