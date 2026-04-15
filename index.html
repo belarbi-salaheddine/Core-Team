@@ -1,0 +1,3323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚀 Core Team · الفريق الأساسي | Ultimate Edition</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+
+  <style>
+    /* ============================================ */
+    /* ULTIMATE PREMIUM DESIGN SYSTEM */
+    /* ============================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Premium Color Palette */
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-light: #818cf8;
+      --secondary: #06b6d4;
+      --accent: #f43f5e;
+      --accent-gold: #fbbf24;
+      --accent-purple: #a855f7;
+      --accent-green: #10b981;
+      
+      --dark-bg: #0a0e17;
+      --dark-surface: #151a26;
+      --dark-elevated: #1f2533;
+      
+      --light-bg: #f0f4f8;
+      --light-surface: #ffffff;
+      --light-elevated: #f8fafc;
+      
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-bg-strong: rgba(255, 255, 255, 0.08);
+      
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --info: #3b82f6;
+      
+      --shadow-sm: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      --shadow-xl: 0 50px 100px -20px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+      --shadow-gold: 0 0 30px rgba(251, 191, 36, 0.2);
+      
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    /* Dark/Light Mode */
+    [data-theme="dark"] {
+      --bg-primary: var(--dark-bg);
+      --bg-secondary: var(--dark-surface);
+      --bg-elevated: var(--dark-elevated);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: var(--light-bg);
+      --bg-secondary: var(--light-surface);
+      --bg-elevated: var(--light-elevated);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    /* Default Dark Theme */
+    :root {
+      --bg-primary: var(--dark-bg);
+      --bg-secondary: var(--dark-surface);
+      --bg-elevated: var(--dark-elevated);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    /* Particles Background */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Animated Gradient Overlay */
+    .gradient-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 20%, rgba(244, 63, 94, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--glass-bg-strong);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text-primary);
+      font-size: 1.2rem;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-glow);
+    }
+
+    /* Floating Progress */
+    .floating-progress {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      background: var(--glass-bg-strong);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 40px;
+      padding: 1rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .progress-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--text-secondary);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .progress-dot:hover {
+      transform: scale(1.5);
+    }
+
+    .progress-dot.active {
+      background: var(--primary);
+      box-shadow: var(--shadow-glow);
+      transform: scale(1.3);
+    }
+
+    .progress-dot.completed {
+      background: var(--success);
+    }
+
+    .progress-dot::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--bg-elevated);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: var(--transition);
+      pointer-events: none;
+      border: 1px solid var(--glass-border);
+    }
+
+    .progress-dot:hover::after {
+      opacity: 1;
+      left: 20px;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      background: var(--primary-dark);
+    }
+
+    /* Main Container */
+    .app-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+      color: #0f172a;
+      padding: 0.7rem 2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.02); }
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 40%, var(--secondary) 70%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      animation: titleGlow 3s ease infinite;
+    }
+
+    @keyframes titleGlow {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.2); }
+    }
+
+    .hero-subtitle {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Tajawal', sans-serif;
+      color: var(--text-primary);
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 2.5rem 0;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-stat-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1.2rem 3rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      border-radius: 60px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--text-primary), var(--primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Why Join Cards */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .benefit-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 2rem;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .benefit-card:nth-child(1) { animation-delay: 0.1s; }
+    .benefit-card:nth-child(2) { animation-delay: 0.2s; }
+    .benefit-card:nth-child(3) { animation-delay: 0.3s; }
+    .benefit-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .benefit-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+    }
+
+    .benefit-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: white;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .benefit-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-description {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Skills Learned Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .skill-item {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+
+    .skill-item:hover {
+      transform: translateX(5px);
+      border-color: var(--primary);
+      background: var(--glass-bg-strong);
+    }
+
+    .skill-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+    }
+
+    .skill-info h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .skill-info p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 4rem auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      box-shadow: var(--shadow-glow);
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      width: 45%;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .timeline-content:hover {
+      transform: scale(1.02);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .timeline-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: var(--primary);
+      border: 4px solid var(--bg-primary);
+      border-radius: 50%;
+      box-shadow: var(--shadow-glow);
+    }
+
+    /* Testimonials Section */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .testimonial-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 2rem;
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .testimonial-quote {
+      font-size: 3rem;
+      color: var(--primary);
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .author-info h5 {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .author-info p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 3rem auto;
+    }
+
+    .faq-item {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--primary-light);
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .faq-question i {
+      transition: var(--transition);
+      color: var(--primary);
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      max-height: 300px;
+    }
+
+    /* Countdown Timer */
+    .countdown-container {
+      background: var(--glass-bg-strong);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 2rem;
+      padding: 2rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 3rem auto;
+    }
+
+    .countdown-title {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .countdown-item {
+      text-align: center;
+    }
+
+    .countdown-value {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+    }
+
+    /* Application Card */
+    .application-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(30px) saturate(180%);
+      -webkit-backdrop-filter: blur(30px) saturate(180%);
+      border: 1px solid var(--glass-border);
+      border-radius: 3rem;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+      transition: var(--transition-smooth);
+    }
+
+    /* Progress Steps */
+    .progress-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .progress-steps::before {
+      content: '';
+      position: absolute;
+      top: 25px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--border-color);
+      z-index: 0;
+    }
+
+    .step {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .step-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--bg-elevated);
+      border: 2px solid var(--border-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+      background: var(--glass-bg);
+    }
+
+    .step.active .step-icon {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-color: transparent;
+      color: white;
+      box-shadow: var(--shadow-glow);
+      transform: scale(1.1);
+    }
+
+    .step.completed .step-icon {
+      background: var(--success);
+      border-color: transparent;
+      color: white;
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    .form-label {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      z-index: 1;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      font-size: 1rem;
+      background: var(--glass-bg-strong);
+      border: 2px solid var(--border-color);
+      border-radius: 1.2rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    textarea {
+      padding: 1rem;
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2), var(--shadow-glow);
+      transform: translateY(-2px);
+      background: var(--bg-elevated);
+    }
+
+    /* Options Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+      background: var(--glass-bg);
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.5rem;
+      border-radius: 0.8rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .option-item:hover {
+      background: var(--glass-bg-strong);
+    }
+
+    .option-item input[type="checkbox"],
+    .option-item input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--primary);
+      padding: 0;
+      cursor: pointer;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      width: 100%;
+      padding: 1.3rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      border-radius: 2rem;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .submit-btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+    }
+
+    /* Toast Notifications */
+    .toast-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9999;
+    }
+
+    .toast {
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      margin-top: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--shadow-lg);
+      animation: slideIn 0.3s ease;
+      min-width: 300px;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .toast.success { border-left: 4px solid var(--success); }
+    .toast.error { border-left: 4px solid var(--error); }
+    .toast.info { border-left: 4px solid var(--info); }
+
+    /* Arabic text support */
+    .ar-text {
+      direction: rtl;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+      .hero-subtitle { font-size: 1.5rem; }
+      .section-title { font-size: 2rem; }
+      .floating-progress { display: none; }
+      .timeline::before { left: 20px; }
+      .timeline-item { flex-direction: column !important; }
+      .timeline-content { width: calc(100% - 50px); margin-left: 50px; }
+      .timeline-dot { left: 20px; }
+      .countdown-timer { gap: 1rem; }
+      .countdown-value { font-size: 2rem; }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+<!-- Particles Background -->
+<div id="particles-js"></div>
+<div class="gradient-overlay"></div>
+
+<!-- Theme Toggle -->
+<div class="theme-toggle" onclick="toggleTheme()">
+  <i class="fas fa-moon" id="themeIcon"></i>
+</div>
+
+<!-- Floating Progress -->
+<div class="floating-progress" id="floatingProgress">
+  <div class="progress-dot active" data-label="Hero" onclick="scrollToSection('hero')"></div>
+  <div class="progress-dot" data-label="Why Join" onclick="scrollToSection('whyJoin')"></div>
+  <div class="progress-dot" data-label="Skills" onclick="scrollToSection('skills')"></div>
+  <div class="progress-dot" data-label="Timeline" onclick="scrollToSection('timeline')"></div>
+  <div class="progress-dot" data-label="Testimonials" onclick="scrollToSection('testimonials')"></div>
+  <div class="progress-dot" data-label="FAQ" onclick="scrollToSection('faq')"></div>
+  <div class="progress-dot" data-label="Apply" onclick="scrollToSection('apply')"></div>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Main App -->
+<div class="app-container">
+  
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-crown"></i>
+        <span>LIMITED ELITE SPOTS · مقاعد النخبة محدودة</span>
+        <i class="fas fa-crown"></i>
+      </div>
+      
+      <h1 class="hero-title">🚀 Core Team<br>Application</h1>
+      <div class="hero-subtitle ar-text">تقديم للفريق الأساسي</div>
+      
+      <p class="hero-description">
+        We are building a small, high-impact team of university students to work on real projects.
+        This is a serious initiative focused on growth, execution, and long-term collaboration.
+      </p>
+      
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value" id="applicantCount">247</div>
+          <div class="hero-stat-label">Applications</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">12</div>
+          <div class="hero-stat-label">Spots Left</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">4.8★</div>
+          <div class="hero-stat-label">Team Rating</div>
+        </div>
+      </div>
+      
+      <a href="#apply" class="cta-button">
+        <i class="fas fa-rocket"></i>
+        <span>Start Application · ابدأ التقديم</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Section -->
+  <section class="section" id="whyJoin">
+    <div class="section-header">
+      <h2 class="section-title">Why Join Core Team?</h2>
+      <p class="section-subtitle ar-text">لماذا تنضم إلى الفريق الأساسي؟</p>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-project-diagram"></i>
+        </div>
+        <h3 class="benefit-title">Real Projects</h3>
+        <p class="benefit-description">Work on actual projects that impact real users. Build your portfolio with meaningful work.</p>
+        <p class="benefit-description ar-text" style="margin-top:10px;">اعمل على مشاريع حقيقية تؤثر على مستخدمين حقيقيين. ابنِ معرض أعمالك بعمل ذي معنى.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="benefit-title">Elite Network</h3>
+        <p class="benefit-description">Connect with ambitious, like-minded individuals. Build relationships that last beyond university.</p>
+        <p class="benefit-description ar-text" style="margin-top:10px;">تواصل مع أفراد طموحين يشاركونك التفكير. ابنِ علاقات تدوم بعد الجامعة.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="benefit-title">Accelerated Growth</h3>
+        <p class="benefit-description">Learn 10x faster through hands-on experience and mentorship from industry professionals.</p>
+        <p class="benefit-description ar-text" style="margin-top:10px;">تعلم أسرع بعشر مرات من خلال الخبرة العملية والإرشاد من محترفين في المجال.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h3 class="benefit-title">Career Launchpad</h3>
+        <p class="benefit-description">Get exclusive opportunities, referrals, and the skills needed to land your dream role.</p>
+        <p class="benefit-description ar-text" style="margin-top:10px;">احصل على فرص حصرية وتوصيات والمهارات اللازمة للحصول على وظيفة أحلامك.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills You'll Learn Section -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <h2 class="section-title">What You'll Learn</h2>
+      <p class="section-subtitle ar-text">المهارات التي ستكتسبها</p>
+    </div>
+    
+    <div class="skills-grid">
+      <div class="skill-item">
+        <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <div class="skill-info">
+          <h4>Technical Development</h4>
+          <p>Full-stack, APIs, DevOps</p>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+        <div class="skill-info">
+          <h4>Product Design</h4>
+          <p>UI/UX, Figma, Prototyping</p>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon"><i class="fas fa-bullhorn"></i></div>
+        <div class="skill-info">
+          <h4>Growth Marketing</h4>
+          <p>SEO, Content, Analytics</p>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+        <div class="skill-info">
+          <h4>Leadership</h4>
+          <p>Team Management, Communication</p>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon"><i class="fas fa-video"></i></div>
+        <div class="skill-info">
+          <h4>Content Creation</h4>
+          <p>Video Editing, Storytelling</p>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+        <div class="skill-info">
+          <h4>Data Analysis</h4>
+          <p>SQL, Visualization, Insights</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+<section class="section" id="timeline">
+  <div class="section-header">
+    <h2 class="section-title">Selection Process</h2>
+    <p class="section-subtitle ar-text">مراحل الانضمام للفريق</p>
+  </div>
+  
+  <div class="countdown-container">
+    <div class="countdown-title">
+      <i class="fas fa-hourglass-half"></i> Application Deadline
+    </div>
+    <div class="countdown-timer" id="countdown">
+      <div class="countdown-item">
+        <div class="countdown-value" id="days">7</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="hours">00</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="minutes">00</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-value" id="seconds">00</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="timeline">
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="timeline-date">Step 1</span>
+        <h4 class="timeline-title">Application</h4>
+        <p>Submit your application form. We are looking for mindset, not just skills.</p>
+        <p class="ar-text">قم بإرسال طلبك. نركز على العقلية أكثر من المهارات فقط.</p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="timeline-date">Step 2</span>
+        <h4 class="timeline-title">Short Interview</h4>
+        <p>A quick 10–15 min conversation to understand how you think and communicate.</p>
+        <p class="ar-text">مقابلة قصيرة لفهم طريقة تفكيرك وتواصلك.</p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="timeline-date">Step 3</span>
+        <h4 class="timeline-title">Trial Task</h4>
+        <p>You will complete a small real task based on your role (content, design, tech…).</p>
+        <p class="ar-text">ستقوم بتنفيذ مهمة صغيرة حقيقية حسب دورك.</p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="timeline-date">Step 4</span>
+        <h4 class="timeline-title">Core Team Selection</h4>
+        <p>Top performers will join the core team and start building real projects.</p>
+        <p class="ar-text">يتم اختيار الأفضل للانضمام للفريق الأساسي والعمل على مشاريع حقيقية.</p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+  </div>
+</section>
+  <!-- Value Section -->
+<section class="section" id="value">
+  <div class="section-header">
+    <h2 class="section-title">What You'll Gain</h2>
+    <p class="section-subtitle ar-text">ماذا ستستفيد</p>
+  </div>
+  
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <div class="testimonial-quote">🚀</div>
+      <p class="testimonial-text">
+        Work on real projects, not just ideas. Build things that actually exist and grow.
+      </p>
+      <p class="ar-text" style="margin-top:10px;">
+        ستعمل على مشاريع حقيقية وليس مجرد أفكار، وتبني أشياء لها وجود وتأثير.
+      </p>
+    </div>
+    
+    <div class="testimonial-card">
+      <div class="testimonial-quote">🧠</div>
+      <p class="testimonial-text">
+        Learn by doing. Develop real skills in content, tech, design, and teamwork.
+      </p>
+      <p class="ar-text" style="margin-top:10px;">
+        التعلم من خلال التطبيق، وتطوير مهارات حقيقية في المحتوى، التقنية، التصميم والعمل الجماعي.
+      </p>
+    </div>
+    
+    <div class="testimonial-card">
+      <div class="testimonial-quote">🤝</div>
+      <p class="testimonial-text">
+        Join a small, ambitious team. Grow with people who want to build something bigger.
+      </p>
+      <p class="ar-text" style="margin-top:10px;">
+        الانضمام إلى فريق صغير وطموح، والعمل مع أشخاص يسعون لبناء شيء أكبر.
+      </p>
+    </div>
+
+  </div>
+</section>
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle ar-text">الأسئلة الشائعة</p>
+    </div>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Who can apply?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Any university student (undergraduate or graduate) who is passionate about building and learning. We value attitude and potential over grades.</p>
+          <p class="ar-text" style="margin-top:10px;">أي طالب جامعي شغوف بالبناء والتعلم. نقدر الموقف والإمكانات أكثر من الدرجات.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How much time is required?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We expect 5-10 hours per week. We understand you're a student, so we're flexible during exam periods.</p>
+          <p class="ar-text" style="margin-top:10px;">نتوقع 5-10 ساعات أسبوعيًا. نتفهم أنك طالب، لذلك نحن مرنون خلال فترات الامتحانات.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is this paid?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+  <p>
+    Currently, this is not a paid opportunity. 
+    The focus is on gaining real experience, building projects, and developing valuable skills in a team environment.
+  </p>
+  <p>
+    As the project grows, there may be opportunities for monetization and future rewards.
+  </p>
+
+  <p class="ar-text" style="margin-top:10px;">
+    حالياً لا يوجد مقابل مادي. الهدف هو اكتساب خبرة حقيقية، والعمل على مشاريع واقعية، وتطوير مهاراتك ضمن فريق.
+  </p>
+  <p class="ar-text" style="margin-top:10px;">
+    ومع تطور المشروع، قد تكون هناك فرص لتحقيق دخل أو مكافآت مستقبلية.
+  </p>
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Do I need experience?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>No prior professional experience required. We're looking for potential and willingness to learn. Show us what you can do!</p>
+          <p class="ar-text" style="margin-top:10px;">لا يشترط خبرة مهنية سابقة. نبحث عن الإمكانات والاستعداد للتعلم. أرنا ما يمكنك فعله!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form Section - Ultimate Version -->
+<section class="section" id="apply">
+  <div class="section-header">
+    <div class="section-badge">
+      <i class="fas fa-star"></i>
+      <span>Final Step</span>
+      <i class="fas fa-star"></i>
+    </div>
+    <h2 class="section-title">Apply Now</h2>
+    <p class="section-subtitle ar-text">قدم الآن وانضم إلى النخبة</p>
+  </div>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    
+    <!-- Progress Header -->
+    <div class="form-progress-header">
+      <div class="progress-info">
+        <span class="current-section" id="currentSectionLabel">Personal</span>
+        <span class="progress-percentage" id="formProgressPercent">0%</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="formProgressBar"></div>
+      </div>
+    </div>
+
+    <!-- Progress Steps Enhanced -->
+    <div class="progress-steps-enhanced">
+      <div class="step-enhanced active" data-step="1" data-title="Personal">
+        <div class="step-icon-enhanced">
+          <i class="fas fa-user"></i>
+          <span class="step-number">1</span>
+        </div>
+        <div class="step-content">
+          <span class="step-title">Personal</span>
+          <span class="step-subtitle">معلومات شخصية</span>
+        </div>
+        <div class="step-connector"></div>
+      </div>
+      
+      <div class="step-enhanced" data-step="2" data-title="Skills">
+        <div class="step-icon-enhanced">
+          <i class="fas fa-code"></i>
+          <span class="step-number">2</span>
+        </div>
+        <div class="step-content">
+          <span class="step-title">Skills</span>
+          <span class="step-subtitle">المهارات والخبرة</span>
+        </div>
+        <div class="step-connector"></div>
+      </div>
+      
+      <div class="step-enhanced" data-step="3" data-title="Thinking">
+        <div class="step-icon-enhanced">
+          <i class="fas fa-lightbulb"></i>
+          <span class="step-number">3</span>
+        </div>
+        <div class="step-content">
+          <span class="step-title">Thinking</span>
+          <span class="step-subtitle">التفكير الإبداعي</span>
+        </div>
+        <div class="step-connector"></div>
+      </div>
+      
+      <div class="step-enhanced" data-step="4" data-title="Mindset">
+        <div class="step-icon-enhanced">
+          <i class="fas fa-brain"></i>
+          <span class="step-number">4</span>
+        </div>
+        <div class="step-content">
+          <span class="step-title">Mindset</span>
+          <span class="step-subtitle">العقلية</span>
+        </div>
+        <div class="step-connector"></div>
+      </div>
+      
+      <div class="step-enhanced" data-step="5" data-title="Commitment">
+        <div class="step-icon-enhanced">
+          <i class="fas fa-handshake"></i>
+          <span class="step-number">5</span>
+        </div>
+        <div class="step-content">
+          <span class="step-title">Commitment</span>
+          <span class="step-subtitle">الالتزام</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Application Card -->
+    <div class="application-card-enhanced" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-scale="1.01">
+      
+      <!-- Save Indicator -->
+      <div class="save-indicator" id="saveIndicator">
+        <i class="fas fa-check-circle"></i>
+        <span>Saved</span>
+      </div>
+
+      <!-- Form -->
+      <form id="applicationForm">
+        
+        <!-- Section 1: Personal -->
+        <div class="form-section-enhanced active" id="section1">
+          <div class="section-header-enhanced">
+            <div class="section-icon-enhanced">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="section-title-wrapper">
+              <h3>Section 1 · Personal Information</h3>
+              <p class="ar-text">القسم الأول · المعلومات الشخصية</p>
+            </div>
+            <div class="section-score" id="section1Score">
+              <i class="fas fa-circle"></i>
+              <span>0%</span>
+            </div>
+          </div>
+          
+          <div class="form-grid">
+            <div class="form-group-enhanced">
+              <label class="form-label-enhanced">
+                <span class="label-text">Full Name</span>
+                <span class="required-badge">Required</span>
+              </label>
+              <div class="input-wrapper-enhanced">
+                <i class="fas fa-user input-icon-enhanced"></i>
+                <input type="text" name="fullName" id="fullName" 
+                       placeholder="Ahmed Mansour / Sarah Chen" 
+                       data-section="1"
+                       oninput="updateFieldProgress(this)">
+                <span class="input-status"><i class="fas fa-circle"></i></span>
+              </div>
+              <div class="field-hint ar-text">اكتب اسمك الكامل كما تريد ظهوره</div>
+            </div>
+            
+            <div class="form-group-enhanced">
+              <label class="form-label-enhanced">
+                <span class="label-text">Email Address</span>
+                <span class="required-badge">Required</span>
+              </label>
+              <div class="input-wrapper-enhanced">
+                <i class="fas fa-envelope input-icon-enhanced"></i>
+                <input type="email" name="email" id="email" 
+                       placeholder="you@example.com" 
+                       data-section="1"
+                       oninput="validateEmail(this); updateFieldProgress(this)">
+                <span class="input-status"><i class="fas fa-circle"></i></span>
+              </div>
+              <div class="field-hint ar-text">سنستخدم هذا الإيميل للتواصل معك</div>
+            </div>
+            
+            <div class="form-group-enhanced full-width">
+              <label class="form-label-enhanced">
+                <span class="label-text">Field of Study & Year</span>
+                <span class="required-badge">Required</span>
+              </label>
+              <div class="input-wrapper-enhanced">
+                <i class="fas fa-graduation-cap input-icon-enhanced"></i>
+                <input type="text" name="studyField" id="studyField" 
+                       placeholder="Computer Science, 3rd Year" 
+                       data-section="1"
+                       oninput="updateFieldProgress(this)">
+                <span class="input-status"><i class="fas fa-circle"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Skills -->
+        <div class="form-section-enhanced" id="section2">
+          <div class="section-header-enhanced">
+            <div class="section-icon-enhanced">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="section-title-wrapper">
+              <h3>Section 2 · Skills & Experience</h3>
+              <p class="ar-text">القسم الثاني · المهارات والخبرة</p>
+            </div>
+            <div class="section-score" id="section2Score">
+              <i class="fas fa-circle"></i>
+              <span>0%</span>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Areas of Interest</span>
+              <span class="optional-badge">Multiple</span>
+            </label>
+            <div class="interests-grid">
+              <label class="interest-card">
+                <input type="checkbox" name="interests" value="Content Creation" data-section="2">
+                <span class="interest-icon"><i class="fas fa-pen"></i></span>
+                <span class="interest-title">Content Creation</span>
+                <span class="interest-subtitle">صناعة المحتوى</span>
+              </label>
+              <label class="interest-card">
+                <input type="checkbox" name="interests" value="Video Editing" data-section="2">
+                <span class="interest-icon"><i class="fas fa-video"></i></span>
+                <span class="interest-title">Video Editing</span>
+                <span class="interest-subtitle">تحرير الفيديو</span>
+              </label>
+              <label class="interest-card">
+                <input type="checkbox" name="interests" value="Design" data-section="2">
+                <span class="interest-icon"><i class="fas fa-paint-brush"></i></span>
+                <span class="interest-title">Design</span>
+                <span class="interest-subtitle">التصميم</span>
+              </label>
+              <label class="interest-card">
+                <input type="checkbox" name="interests" value="Marketing / Growth" data-section="2">
+                <span class="interest-icon"><i class="fas fa-chart-line"></i></span>
+                <span class="interest-title">Marketing</span>
+                <span class="interest-subtitle">التسويق والنمو</span>
+              </label>
+              <label class="interest-card">
+                <input type="checkbox" name="interests" value="Tech / Development" data-section="2">
+                <span class="interest-icon"><i class="fas fa-laptop-code"></i></span>
+                <span class="interest-title">Tech/Dev</span>
+                <span class="interest-subtitle">التقنية والتطوير</span>
+              </label>
+              <label class="interest-card">
+                <input type="checkbox" name="interests" value="Business / Ideas" data-section="2">
+                <span class="interest-icon"><i class="fas fa-briefcase"></i></span>
+                <span class="interest-title">Business</span>
+                <span class="interest-subtitle">الأعمال والأفكار</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Strongest Skill</span>
+              <span class="required-badge">Required</span>
+            </label>
+            <div class="textarea-wrapper-enhanced">
+              <i class="fas fa-star input-icon-enhanced"></i>
+              <textarea name="strongestSkill" id="strongestSkill" 
+                        placeholder="e.g. Figma prototyping, Python automation, Premiere Pro..."
+                        data-section="2"
+                        oninput="updateFieldProgress(this); updateCharCount(this)"
+                        maxlength="500"></textarea>
+              <span class="char-counter" id="skillCharCount">0/500</span>
+            </div>
+            <div class="field-hint">
+              <i class="fas fa-lightbulb"></i>
+              <span>Pro tip: Mention specific tools and platforms you've mastered</span>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Previous Projects</span>
+              <span class="required-badge">Required</span>
+            </label>
+            <div class="textarea-wrapper-enhanced">
+              <i class="fas fa-project-diagram input-icon-enhanced"></i>
+              <textarea name="projects" id="projects" 
+                        placeholder="Describe your experience... Include links if possible."
+                        data-section="2"
+                        oninput="updateFieldProgress(this); updateCharCount(this)"
+                        maxlength="1000"></textarea>
+              <span class="char-counter" id="projectsCharCount">0/1000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Thinking -->
+        <div class="form-section-enhanced" id="section3">
+          <div class="section-header-enhanced">
+            <div class="section-icon-enhanced">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="section-title-wrapper">
+              <h3>Section 3 · Creative Thinking</h3>
+              <p class="ar-text">القسم الثالث · التفكير الإبداعي</p>
+            </div>
+            <div class="section-score" id="section3Score">
+              <i class="fas fa-circle"></i>
+              <span>0%</span>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">
+                <i class="fas fa-rocket" style="color: var(--primary);"></i>
+                Zero-budget project idea
+              </span>
+              <span class="required-badge">Required</span>
+            </label>
+            <div class="idea-box">
+              <div class="idea-prompt">
+                <p><strong>Suggest one simple project students can start with almost no money.</strong></p>
+                <p class="ar-text">اقترح مشروعًا بسيطًا للطلاب بتكلفة شبه معدومة</p>
+              </div>
+              <textarea name="projectIdea" id="projectIdea" 
+                        placeholder="The idea · Why it works · How to start&#10;&#10;Example: A study group matching platform using WhatsApp and Google Sheets..."
+                        data-section="3"
+                        oninput="updateFieldProgress(this); updateCharCount(this)"
+                        maxlength="1500"></textarea>
+              <span class="char-counter" id="ideaCharCount">0/1500</span>
+            </div>
+            <div class="idea-tips">
+              <span class="tip-badge"><i class="fas fa-trophy"></i> Strong answers include:</span>
+              <span class="tip-item">Clear problem statement</span>
+              <span class="tip-item">Practical solution</span>
+              <span class="tip-item">Actionable first steps</span>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Improve student Instagram page</span>
+              <span class="optional-badge">Optional</span>
+            </label>
+            <textarea name="instagramImprove" id="instagramImprove" 
+                      placeholder="Your strategy for growing and engaging a student audience..."
+                      data-section="3"
+                      oninput="updateFieldProgress(this); updateCharCount(this)"
+                      maxlength="1000"></textarea>
+            <span class="char-counter" id="instagramCharCount">0/1000</span>
+          </div>
+        </div>
+
+        <!-- Section 4: Mindset -->
+        <div class="form-section-enhanced" id="section4">
+          <div class="section-header-enhanced">
+            <div class="section-icon-enhanced">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="section-title-wrapper">
+              <h3>Section 4 · Mindset & Goals</h3>
+              <p class="ar-text">القسم الرابع · العقلية والأهداف</p>
+            </div>
+            <div class="section-score" id="section4Score">
+              <i class="fas fa-circle"></i>
+              <span>0%</span>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced">
+            <label class="form-label-enhanced">
+              <span class="label-text">Main goal (6-12 months)</span>
+              <span class="required-badge">Required</span>
+            </label>
+            <div class="input-wrapper-enhanced">
+              <i class="fas fa-bullseye input-icon-enhanced"></i>
+              <input type="text" name="goal" id="goal" 
+                     placeholder="e.g. Launch a micro-SaaS, master full-stack development..."
+                     data-section="4"
+                     oninput="updateFieldProgress(this)">
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Why join this team?</span>
+              <span class="required-badge">Required</span>
+            </label>
+            <textarea name="whyJoin" id="whyJoin" 
+                      placeholder="What motivates you? What do you hope to contribute and learn?"
+                      data-section="4"
+                      oninput="updateFieldProgress(this); updateCharCount(this)"
+                      maxlength="1000"></textarea>
+            <span class="char-counter" id="whyJoinCharCount">0/1000</span>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">What makes you different?</span>
+              <span class="optional-badge">Optional</span>
+            </label>
+            <textarea name="difference" id="difference" 
+                      placeholder="Unique traits, perspective, or experiences..."
+                      data-section="4"
+                      oninput="updateFieldProgress(this); updateCharCount(this)"
+                      maxlength="800"></textarea>
+            <span class="char-counter" id="differenceCharCount">0/800</span>
+          </div>
+        </div>
+
+        <!-- Section 5: Commitment -->
+        <div class="form-section-enhanced" id="section5">
+          <div class="section-header-enhanced">
+            <div class="section-icon-enhanced">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="section-title-wrapper">
+              <h3>Section 5 · Commitment</h3>
+              <p class="ar-text">القسم الخامس · الالتزام</p>
+            </div>
+            <div class="section-score" id="section5Score">
+              <i class="fas fa-circle"></i>
+              <span>0%</span>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Weekly hours you can dedicate</span>
+              <span class="required-badge">Required</span>
+            </label>
+            <div class="hours-selector">
+              <label class="hour-option">
+                <input type="radio" name="hours" value="<3 hours" data-section="5">
+                <span class="hour-value">&lt;3</span>
+                <span class="hour-label">hours</span>
+              </label>
+              <label class="hour-option">
+                <input type="radio" name="hours" value="3-5 hours" data-section="5">
+                <span class="hour-value">3-5</span>
+                <span class="hour-label">hours</span>
+              </label>
+              <label class="hour-option">
+                <input type="radio" name="hours" value="5-10 hours" data-section="5">
+                <span class="hour-value">5-10</span>
+                <span class="hour-label">hours</span>
+              </label>
+              <label class="hour-option">
+                <input type="radio" name="hours" value="10+ hours" data-section="5">
+                <span class="hour-value">10+</span>
+                <span class="hour-label">hours</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">If you don't understand a task</span>
+              <span class="required-badge">Required</span>
+            </label>
+            <textarea name="taskApproach" id="taskApproach" 
+                      placeholder="Describe your approach to handling unclear tasks..."
+                      data-section="5"
+                      oninput="updateFieldProgress(this); updateCharCount(this)"
+                      maxlength="800"></textarea>
+            <span class="char-counter" id="taskCharCount">0/800</span>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Ready to be evaluated on work?</span>
+              <span class="required-badge">Required</span>
+            </label>
+            <div class="evaluation-selector">
+              <label class="eval-option yes">
+                <input type="radio" name="evaluation" value="Yes" data-section="5">
+                <i class="fas fa-check-circle"></i>
+                <span>Yes, evaluate me on results</span>
+                <span class="ar-text">نعم، قيمني على النتائج</span>
+              </label>
+              <label class="eval-option no">
+                <input type="radio" name="evaluation" value="No" data-section="5">
+                <i class="fas fa-times-circle"></i>
+                <span>No, I prefer other metrics</span>
+                <span class="ar-text">لا، أفضل مقاييس أخرى</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 6: Optional -->
+        <div class="form-section-enhanced" id="section6">
+          <div class="section-header-enhanced">
+            <div class="section-icon-enhanced">
+              <i class="fas fa-paperclip"></i>
+            </div>
+            <div class="section-title-wrapper">
+              <h3>Section 6 · Additional Information</h3>
+              <p class="ar-text">القسم السادس · معلومات إضافية</p>
+            </div>
+            <div class="section-score">
+              <span class="optional-badge">Optional</span>
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Portfolio / Social Links</span>
+              <span class="optional-badge">Optional</span>
+            </label>
+            <div class="input-wrapper-enhanced">
+              <i class="fas fa-link input-icon-enhanced"></i>
+              <input type="text" name="links" id="links" 
+                     placeholder="GitHub, LinkedIn, Behance, personal website..."
+                     data-section="6">
+            </div>
+          </div>
+          
+          <div class="form-group-enhanced full-width">
+            <label class="form-label-enhanced">
+              <span class="label-text">Anything else you'd like to share?</span>
+              <span class="optional-badge">Optional</span>
+            </label>
+            <textarea name="additional" id="additional" 
+                      placeholder="Any other information that might strengthen your application..."
+                      data-section="6"
+                      maxlength="500"></textarea>
+            <span class="char-counter" id="additionalCharCount">0/500</span>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="form-navigation">
+          <button type="button" class="nav-btn prev-btn" id="prevBtn" onclick="navigateSection(-1)" disabled>
+            <i class="fas fa-arrow-left"></i>
+            Previous
+          </button>
+          
+          <div class="nav-indicator">
+            <span id="currentStepDisplay">1</span> / <span>6</span>
+          </div>
+          
+          <button type="button" class="nav-btn next-btn" id="nextBtn" onclick="navigateSection(1)">
+            Next
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          
+          <button type="submit" class="submit-btn-enhanced" id="submitBtn" style="display: none;">
+            <span class="submit-btn-content">
+              <i class="fas fa-rocket"></i>
+              Submit Application
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </button>
+        </div>
+
+        <!-- Quick Summary Sidebar -->
+        <div class="quick-summary" id="quickSummary">
+          <div class="summary-header">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Quick Summary</span>
+          </div>
+          <div class="summary-content" id="summaryContent">
+            <p class="summary-placeholder">Fill the form to see your summary...</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<style>
+/* ============================================ */
+/* ENHANCED APPLICATION FORM STYLES */
+/* ============================================ */
+
+.form-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+  color: #0f172a;
+  padding: 0.5rem 1.5rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Progress Header */
+.form-progress-header {
+  margin-bottom: 2rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.current-section {
+  font-weight: 600;
+  color: var(--primary-light);
+}
+
+.progress-percentage {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.progress-bar-container {
+  height: 8px;
+  background: var(--glass-bg);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+/* Enhanced Steps */
+.progress-steps-enhanced {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.step-enhanced {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.step-enhanced .step-connector {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  right: -50%;
+  height: 2px;
+  background: var(--border-color);
+  z-index: 0;
+}
+
+.step-enhanced:last-child .step-connector {
+  display: none;
+}
+
+.step-enhanced.completed .step-connector {
+  background: var(--success);
+}
+
+.step-icon-enhanced {
+  width: 50px;
+  height: 50px;
+  background: var(--glass-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+  margin-bottom: 0.8rem;
+}
+
+.step-icon-enhanced i {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.step-number {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 22px;
+  height: 22px;
+  background: var(--bg-elevated);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.step-enhanced.active .step-icon-enhanced {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.1);
+}
+
+.step-enhanced.active .step-icon-enhanced i {
+  color: white;
+}
+
+.step-enhanced.active .step-number {
+  background: white;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.step-enhanced.completed .step-icon-enhanced {
+  background: var(--success);
+  border-color: transparent;
+}
+
+.step-enhanced.completed .step-icon-enhanced i {
+  color: white;
+}
+
+.step-content {
+  text-align: center;
+}
+
+.step-title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.step-subtitle {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* Application Card Enhanced */
+.application-card-enhanced {
+  background: var(--glass-bg);
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--glass-border);
+  border-radius: 2.5rem;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.save-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--success);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.save-indicator.show {
+  opacity: 1;
+}
+
+/* Form Sections Enhanced */
+.form-section-enhanced {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.form-section-enhanced.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.section-header-enhanced {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-icon-enhanced {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.section-title-wrapper {
+  flex: 1;
+}
+
+.section-title-wrapper h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.section-title-wrapper p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.section-score {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--glass-bg);
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.section-score i {
+  color: var(--success);
+  font-size: 0.6rem;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group-enhanced {
+  margin-bottom: 1.5rem;
+}
+
+.form-group-enhanced.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label-enhanced {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.label-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.required-badge {
+  background: var(--error);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.optional-badge {
+  background: var(--text-secondary);
+  color: var(--bg-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.input-wrapper-enhanced {
+  position: relative;
+}
+
+.input-icon-enhanced {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  z-index: 1;
+}
+
+.input-wrapper-enhanced input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  font-size: 0.95rem;
+  background: var(--glass-bg-strong);
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.input-wrapper-enhanced input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input-status {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  font-size: 0.5rem;
+}
+
+.input-wrapper-enhanced input:valid + .input-status i {
+  color: var(--success);
+}
+
+.field-hint {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Interests Grid */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.interest-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem;
+  background: var(--glass-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.interest-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.interest-card input {
+  display: none;
+}
+
+.interest-card:has(input:checked) {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.1));
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.interest-icon {
+  font-size: 1.8rem;
+  color: var(--primary-light);
+  margin-bottom: 0.5rem;
+}
+
+.interest-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.interest-subtitle {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* Textarea */
+.textarea-wrapper-enhanced {
+  position: relative;
+}
+
+.textarea-wrapper-enhanced textarea {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  font-size: 0.95rem;
+  background: var(--glass-bg-strong);
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  color: var(--text-primary);
+  resize: vertical;
+  min-height: 120px;
+  transition: var(--transition);
+}
+
+.textarea-wrapper-enhanced textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.char-counter {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+}
+
+/* Idea Box */
+.idea-box {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(6, 182, 212, 0.03));
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.idea-prompt {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--glass-bg);
+  border-radius: 0.8rem;
+  border-left: 4px solid var(--primary);
+}
+
+.idea-prompt p {
+  margin-bottom: 0.3rem;
+}
+
+.idea-box textarea {
+  width: 100%;
+  min-height: 150px;
+  background: var(--bg-elevated);
+}
+
+.idea-tips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.tip-badge {
+  background: var(--primary);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tip-item {
+  background: var(--glass-bg);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Hours Selector */
+.hours-selector {
+  display: flex;
+  gap: 1rem;
+}
+
+.hour-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: var(--glass-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hour-option:hover {
+  border-color: var(--primary);
+}
+
+.hour-option input {
+  display: none;
+}
+
+.hour-option:has(input:checked) {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-color: transparent;
+  color: white;
+}
+
+.hour-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hour-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Evaluation Selector */
+.evaluation-selector {
+  display: flex;
+  gap: 1rem;
+}
+
+.eval-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--glass-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.eval-option i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.eval-option.yes:has(input:checked) {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--success);
+}
+
+.eval-option.no:has(input:checked) {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--error);
+}
+
+.eval-option input {
+  display: none;
+}
+
+.eval-option span:first-of-type {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+/* Navigation */
+.form-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.nav-btn {
+  padding: 0.8rem 2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: var(--primary);
+  border-color: transparent;
+  color: white;
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.nav-indicator {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.nav-indicator span:first-child {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.submit-btn-enhanced {
+  padding: 0.8rem 2.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-glow);
+}
+
+.submit-btn-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.submit-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Quick Summary */
+.quick-summary {
+  position: sticky;
+  top: 100px;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--primary-light);
+}
+
+.summary-content {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.summary-placeholder {
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+}
+
+.summary-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.summary-value {
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .application-card-enhanced {
+    padding: 1.5rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-steps-enhanced {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .step-enhanced {
+    min-width: 80px;
+  }
+  
+  .hours-selector {
+    flex-wrap: wrap;
+  }
+  
+  .hour-option {
+    min-width: 80px;
+  }
+  
+  .evaluation-selector {
+    flex-direction: column;
+  }
+  
+  .quick-summary {
+    position: relative;
+    top: 0;
+  }
+}
+</style>
+</div>
+
+<script>
+// ============================================
+// ENHANCED FORM NAVIGATION & VALIDATION
+// ============================================
+
+let currentSection = 1;
+const totalSections = 6;
+
+function navigateSection(direction) {
+  const newSection = currentSection + direction;
+  
+  if (newSection < 1 || newSection > totalSections) return;
+  
+  // Validate current section before moving forward
+  if (direction === 1 && !validateSection(currentSection)) {
+    showToast('Please complete all required fields in this section', 'warning');
+    return;
+  }
+  
+  // Hide current section
+  document.getElementById(`section${currentSection}`).classList.remove('active');
+  
+  // Show new section
+  currentSection = newSection;
+  document.getElementById(`section${currentSection}`).classList.add('active');
+  
+  // Update UI
+  updateNavigationUI();
+  updateStepsUI();
+  updateProgressBar();
+  updateCurrentSectionLabel();
+  updateSummary();
+}
+
+function updateNavigationUI() {
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const stepDisplay = document.getElementById('currentStepDisplay');
+  
+  stepDisplay.textContent = currentSection;
+  
+  prevBtn.disabled = currentSection === 1;
+  
+  if (currentSection === totalSections) {
+    nextBtn.style.display = 'none';
+    submitBtn.style.display = 'block';
+  } else {
+    nextBtn.style.display = 'flex';
+    submitBtn.style.display = 'none';
+  }
+}
+
+function updateStepsUI() {
+  document.querySelectorAll('.step-enhanced').forEach((step, index) => {
+    const stepNum = index + 1;
+    step.classList.remove('active', 'completed');
+    
+    if (stepNum === currentSection) {
+      step.classList.add('active');
+    } else if (stepNum < currentSection) {
+      step.classList.add('completed');
+    }
+  });
+}
+
+function updateProgressBar() {
+  const progress = (currentSection / totalSections) * 100;
+  document.getElementById('formProgressBar').style.width = progress + '%';
+  document.getElementById('formProgressPercent').textContent = Math.round(progress) + '%';
+}
+
+function updateCurrentSectionLabel() {
+  const labels = ['Personal', 'Skills', 'Thinking', 'Mindset', 'Commitment', 'Additional'];
+  document.getElementById('currentSectionLabel').textContent = labels[currentSection - 1];
+}
+
+function validateSection(sectionNum) {
+  const section = document.getElementById(`section${sectionNum}`);
+  const requiredFields = section.querySelectorAll('[required]');
+  
+  let isValid = true;
+  requiredFields.forEach(field => {
+    if (field.type === 'radio') {
+      const name = field.name;
+      const checked = section.querySelector(`input[name="${name}"]:checked`);
+      if (!checked) isValid = false;
+    } else if (field.type === 'checkbox') {
+      // Checkboxes are optional
+    } else if (!field.value.trim()) {
+      isValid = false;
+    }
+  });
+  
+  // Update section score
+  const scoreSpan = document.getElementById(`section${sectionNum}Score`)?.querySelector('span');
+  if (scoreSpan) {
+    const score = calculateSectionScore(sectionNum);
+    scoreSpan.textContent = score + '%';
+  }
+  
+  return isValid;
+}
+
+function calculateSectionScore(sectionNum) {
+  const section = document.getElementById(`section${sectionNum}`);
+  const fields = section.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]), textarea');
+  const radioGroups = [...new Set([...section.querySelectorAll('input[type="radio"]')].map(r => r.name))];
+  
+  let total = fields.length + radioGroups.length;
+  let filled = 0;
+  
+  fields.forEach(field => {
+    if (field.value.trim()) filled++;
+  });
+  
+  radioGroups.forEach(name => {
+    if (section.querySelector(`input[name="${name}"]:checked`)) filled++;
+  });
+  
+  return Math.round((filled / total) * 100);
+}
+
+function updateFieldProgress(field) {
+  const sectionNum = field.dataset.section;
+  if (sectionNum) {
+    validateSection(parseInt(sectionNum));
+  }
+  updateOverallProgress();
+  autoSave();
+}
+
+function updateOverallProgress() {
+  let totalScore = 0;
+  for (let i = 1; i <= totalSections; i++) {
+    totalScore += calculateSectionScore(i);
+  }
+  const avgScore = Math.round(totalScore / totalSections);
+  document.getElementById('formProgressPercent').textContent = avgScore + '%';
+}
+
+function updateCharCount(element) {
+  const id = element.id;
+  const counter = document.getElementById(id + 'CharCount');
+  if (counter) {
+    const max = element.maxLength;
+    const current = element.value.length;
+    counter.textContent = `${current}/${max}`;
+    
+    if (current > max * 0.9) {
+      counter.style.color = 'var(--warning)';
+    } else {
+      counter.style.color = 'var(--text-secondary)';
+    }
+  }
+}
+
+function validateEmail(input) {
+  const email = input.value;
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const statusIcon = input.parentElement.querySelector('.input-status i');
+  
+  if (email) {
+    if (isValid) {
+      statusIcon.style.color = 'var(--success)';
+    } else {
+      statusIcon.style.color = 'var(--error)';
+    }
+  } else {
+    statusIcon.style.color = 'var(--text-secondary)';
+  }
+  
+  return isValid;
+}
+
+function updateSummary() {
+  const summaryContent = document.getElementById('summaryContent');
+  const form = document.getElementById('applicationForm');
+  const formData = new FormData(form);
+  
+  let html = '';
+  
+  // Personal
+  const fullName = formData.get('fullName');
+  const email = formData.get('email');
+  const study = formData.get('studyField');
+  
+  if (fullName || email || study) {
+    html += `<div class="summary-item">`;
+    html += `<div class="summary-label">📋 Personal</div>`;
+    if (fullName) html += `<div class="summary-value">${fullName}</div>`;
+    if (email) html += `<div class="summary-value">${email}</div>`;
+    if (study) html += `<div class="summary-value">${study}</div>`;
+    html += `</div>`;
+  }
+  
+  // Interests
+  const interests = formData.getAll('interests');
+  if (interests.length > 0) {
+    html += `<div class="summary-item">`;
+    html += `<div class="summary-label">🎯 Interests</div>`;
+    html += `<div class="summary-value">${interests.join(', ')}</div>`;
+    html += `</div>`;
+  }
+  
+  // Goal
+  const goal = formData.get('goal');
+  if (goal) {
+    html += `<div class="summary-item">`;
+    html += `<div class="summary-label">🎯 Main Goal</div>`;
+    html += `<div class="summary-value">${goal}</div>`;
+    html += `</div>`;
+  }
+  
+  // Hours
+  const hours = formData.get('hours');
+  if (hours) {
+    html += `<div class="summary-item">`;
+    html += `<div class="summary-label">⏰ Weekly Hours</div>`;
+    html += `<div class="summary-value">${hours}</div>`;
+    html += `</div>`;
+  }
+  
+  summaryContent.innerHTML = html || '<p class="summary-placeholder">Fill the form to see your summary...</p>';
+}
+
+// Auto-save
+let autoSaveTimeout;
+function autoSave() {
+  clearTimeout(autoSaveTimeout);
+  autoSaveTimeout = setTimeout(() => {
+    const form = document.getElementById('applicationForm');
+    const formData = new FormData(form);
+    const data = {};
+    
+    formData.forEach((value, key) => {
+      if (data[key]) {
+        if (Array.isArray(data[key])) {
+          data[key].push(value);
+        } else {
+          data[key] = [data[key], value];
+        }
+      } else {
+        data[key] = value;
+      }
+    });
+    
+    localStorage.setItem('coreTeamApplicationDraft', JSON.stringify(data));
+    
+    const indicator = document.getElementById('saveIndicator');
+    indicator.classList.add('show');
+    setTimeout(() => indicator.classList.remove('show'), 2000);
+  }, 1000);
+}
+
+function loadDraft() {
+  const saved = localStorage.getItem('coreTeamApplicationDraft');
+  if (!saved) return;
+  
+  try {
+    const data = JSON.parse(saved);
+    const form = document.getElementById('applicationForm');
+    
+    Object.keys(data).forEach(key => {
+      const value = data[key];
+      const fields = form.querySelectorAll(`[name="${key}"]`);
+      
+      if (fields.length > 1) {
+        // Checkboxes
+        fields.forEach(field => {
+          if (Array.isArray(value)) {
+            field.checked = value.includes(field.value);
+          } else {
+            field.checked = (field.value === value);
+          }
+        });
+      } else if (fields.length === 1) {
+        const field = fields[0];
+        if (field.type === 'radio') {
+          const radio = form.querySelector(`input[name="${key}"][value="${value}"]`);
+          if (radio) radio.checked = true;
+        } else {
+          field.value = value;
+          if (field.id && field.id.includes('CharCount')) {
+            updateCharCount(field);
+          }
+        }
+      }
+    });
+    
+    updateSummary();
+    showToast('📂 Draft loaded successfully', 'info');
+  } catch (e) {
+    console.error('Error loading draft:', e);
+  }
+}
+
+function showToast(message, type = 'info') {
+  // Implementation in main script
+  if (typeof window.showToast === 'function') {
+    window.showToast(message, type);
+  }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  updateNavigationUI();
+  updateStepsUI();
+  updateProgressBar();
+  updateCurrentSectionLabel();
+  loadDraft();
+  
+  // Add click handlers to steps
+  document.querySelectorAll('.step-enhanced').forEach((step, index) => {
+    step.addEventListener('click', () => {
+      const targetSection = index + 1;
+      if (targetSection < currentSection) {
+        navigateSection(targetSection - currentSection);
+      }
+    });
+  });
+  
+  // Form submission
+  document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Validate all sections
+    for (let i = 1; i <= totalSections; i++) {
+      if (!validateSection(i)) {
+        currentSection = i;
+        document.querySelectorAll('.form-section-enhanced').forEach(s => s.classList.remove('active'));
+        document.getElementById(`section${i}`).classList.add('active');
+        updateNavigationUI();
+        updateStepsUI();
+        showToast('Please complete all required fields', 'error');
+        return;
+      }
+    }
+    
+    // Proceed with submission
+    // ... (submission logic from previous implementation)
+    showToast('🚀 Application submitted successfully!', 'success');
+  });
+});
+
+// Step navigation by clicking on completed steps
+document.querySelectorAll('.step-enhanced').forEach((step, index) => {
+  step.addEventListener('click', function() {
+    const stepNum = index + 1;
+    if (stepNum < currentSection) {
+      navigateSection(stepNum - currentSection);
+    }
+  });
+});
+</script>
+
+<script>
+  // ============================================
+  // PARTICLES.JS INIT
+  // ============================================
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 50, density: { enable: true, value_area: 800 } },
+      color: { value: '#6366f1' },
+      shape: { type: 'circle' },
+      opacity: { value: 0.3, random: true },
+      size: { value: 3, random: true },
+      line_linked: { enable: true, distance: 150, color: '#06b6d4', opacity: 0.2, width: 1 },
+      move: { enable: true, speed: 1, direction: 'none', random: true }
+    },
+    interactivity: {
+      detect_on: 'canvas',
+      events: { onhover: { enable: true, mode: 'repulse' }, resize: true },
+      modes: { repulse: { distance: 100, duration: 0.4 } }
+    },
+    retina_detect: true
+  });
+
+  // ============================================
+  // TILT EFFECT
+  // ============================================
+  VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+    max: 5,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.3,
+  });
+
+  // ============================================
+  // THEME TOGGLE
+  // ============================================
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('themeIcon');
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', newTheme);
+    icon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+    localStorage.setItem('theme', newTheme);
+  }
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.body.setAttribute('data-theme', savedTheme);
+  document.getElementById('themeIcon').className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+
+  // ============================================
+  // FAQ TOGGLE
+  // ============================================
+  function toggleFaq(element) {
+    const faqItem = element.closest('.faq-item');
+    faqItem.classList.toggle('active');
+  }
+
+  // ============================================
+  // COUNTDOWN TIMER
+  // ============================================
+  function updateCountdown() {
+    const deadline = new Date();
+    deadline.setDate(deadline.getDate() + 14);
+    
+    function update() {
+      const now = new Date();
+      const diff = deadline - now;
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    
+    update();
+    setInterval(update, 1000);
+  }
+  updateCountdown();
+
+  // ============================================
+  // SCROLL FUNCTIONS
+  // ============================================
+  function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Back to top visibility
+  window.addEventListener('scroll', () => {
+    const backToTop = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+    
+    // Update floating progress
+    updateFloatingProgress();
+  });
+
+  function updateFloatingProgress() {
+    const sections = ['hero', 'whyJoin', 'skills', 'timeline', 'testimonials', 'faq', 'apply'];
+    const dots = document.querySelectorAll('.progress-dot');
+    
+    sections.forEach((section, index) => {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          dots.forEach(d => d.classList.remove('active'));
+          dots[index].classList.add('active');
+        }
+      }
+    });
+  }
+
+  // ============================================
+  // FORM SUBMISSION
+  // ============================================
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxYFFZp9qA_Vb3BWcp6PO7txEU17VrCQRbKW83uCx_gUchJ3HAe6AmDgTJMS9N5CXxftA/exec';
+  
+  const form = document.getElementById('applicationForm');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    if (!form.checkValidity()) {
+      showToast('Please fill all required fields', 'error');
+      form.reportValidity();
+      return;
+    }
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span style="display:flex;align-items:center;gap:0.8rem;"><i class="fas fa-spinner fa-spin"></i> Submitting...</span>';
+    
+    try {
+      const formData = new FormData(form);
+      const data = {};
+      
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+      
+      data.interests = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value).join(', ');
+      data.timestamp = new Date().toISOString();
+      
+      const urlParams = new URLSearchParams(data);
+      
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: urlParams
+      });
+      
+      showToast('🚀 Application submitted successfully! شكراً لتقديمك', 'success');
+      form.reset();
+      
+    } catch (error) {
+      showToast('❌ Submission failed. Please try again.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
+  });
+
+  // ============================================
+  // TOAST NOTIFICATIONS
+  // ============================================
+  function showToast(message, type = 'info') {
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+    toast.innerHTML = `<span>${icons[type]}</span><span>${message}</span>`;
+    
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.animation = 'slideIn 0.3s ease reverse';
+      setTimeout(() => toast.remove(), 300);
+    }, 4000);
+  }
+
+  // ============================================
+  // ANIMATED COUNTER
+  // ============================================
+  function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      element.textContent = Math.floor(progress * (end - start) + start);
+      if (progress < 1) window.requestAnimationFrame(step);
+    };
+    window.requestAnimationFrame(step);
+  }
+  
+  setTimeout(() => {
+    animateValue(document.getElementById('applicantCount'), 200, 247, 1500);
+  }, 500);
+
+  // ============================================
+  // AUTO-SAVE DRAFT
+  // ============================================
+  const STORAGE_KEY = 'coreTeamUltimateDraft';
+  
+  function saveDraft() {
+    const data = {};
+    const formData = new FormData(form);
+    formData.forEach((value, key) => data[key] = value);
+    data.interests = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+  
+  function loadDraft() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return;
+    
+    try {
+      const data = JSON.parse(saved);
+      Object.keys(data).forEach(key => {
+        if (key === 'interests') {
+          data[key].forEach(value => {
+            const cb = form.querySelector(`input[name="interests"][value="${value}"]`);
+            if (cb) cb.checked = true;
+          });
+        } else {
+          const field = form.querySelector(`[name="${key}"]`);
+          if (field) {
+            if (field.type === 'radio') {
+              const radio = form.querySelector(`input[name="${key}"][value="${data[key]}"]`);
+              if (radio) radio.checked = true;
+            } else {
+              field.value = data[key];
+            }
+          }
+        }
+      });
+      showToast('📂 Draft loaded', 'info');
+    } catch (e) {}
+  }
+  
+  form.addEventListener('input', saveDraft);
+  form.addEventListener('change', saveDraft);
+  loadDraft();
+
+  console.log('🚀 Ultimate Core Team Application Loaded');
+</script>
+
+</body>
+</html>
